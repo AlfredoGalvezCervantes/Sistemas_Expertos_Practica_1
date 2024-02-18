@@ -1,0 +1,8 @@
+def recomendar_receta(ingredientes_disponibles, preferencias_dieteticas):
+    # Supongamos que tienes una base de datos de recetas y su información asociada
+    # Selecciona recetas que se pueden hacer con los ingredientes disponibles y que cumplan con las preferencias dietéticas
+    recetas_recomendadas = []
+    for receta in base_de_datos_recetas:
+        if set(receta.ingredientes).issubset(set(ingredientes_disponibles)) and receta.dietetica == preferencias_dieteticas:
+            recetas_recomendadas.append(receta)
+    return recetas_recomendadas
