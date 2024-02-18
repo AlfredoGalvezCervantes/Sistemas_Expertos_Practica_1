@@ -1,0 +1,8 @@
+def asesoramiento_financiero(ingresos, gastos, metas_financieras):
+    # Proporciona asesoramiento financiero personalizado basado en la situación financiera del usuario
+    balance = ingresos - gastos
+    if balance >= metas_financieras.ahorro_mensual_deseado:
+        recomendacion = "¡Felicidades! Estás cumpliendo tus metas financieras."
+    else:
+        recomendacion = "Deberías considerar reducir gastos o aumentar ingresos para alcanzar tus metas financieras."
+    return recomendacion
