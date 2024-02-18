@@ -1,0 +1,8 @@
+def seleccionar_ropa(ocasion, temperatura, preferencias_estilo):
+    # Supongamos que tienes una base de datos de conjuntos de ropa y su información asociada
+    # Selecciona conjuntos de ropa apropiados para la ocasión y la temperatura dada
+    conjuntos_seleccionados = []
+    for conjunto in base_de_datos_ropa:
+        if conjunto.ocasion == ocasion and conjunto.temperatura == temperatura and conjunto.estilo in preferencias_estilo:
+            conjuntos_seleccionados.append(conjunto)
+    return conjuntos_seleccionados
