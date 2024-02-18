@@ -1,0 +1,32 @@
+def a_estrella(inicio, destino, grafo):
+    frontera = PriorityQueue()
+    frontera.put(inicio, 0)
+    came_from = {}
+    cost_so_far = {}
+    came_from[inicio] = None
+    cost_so_far[inicio] = 0
+
+    while not frontera.empty():
+        actual = frontera.get()
+
+        if actual == destino:
+            break
+
+        for siguiente in grafo.vecinos(actual):
+            nuevo_costo = cost_so_far[actual] + grafo.cost(actual, siguiente)
+            if siguiente not in cost_so_far or nuevo_costo < cost_so_far[siguiente]:
+                cost_so_far[siguiente] = nuevo_costo
+                prioridad = nuevo_costo + heuristica(destino, siguiente)
+                frontera.put(siguiente, prioridad)
+                came_from[siguiente] = actual
+
+    # Reconstruir el camino desde el destino hasta el inicio
+    camino = []
+    actual = destino
+    while actual != inicio:
+        camino.append(actual)
+        actual = came_from[actual]
+    camino.append(inicio)
+    camino.reverse()
+
+    return camino
