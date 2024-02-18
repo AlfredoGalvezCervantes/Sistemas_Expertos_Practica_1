@@ -1,0 +1,8 @@
+def diagnosticar_problema(sintomas):
+    # Supongamos que tienes una base de datos de problemas de computadora y sus soluciones asociadas
+    # Diagnostica el problema basado en los síntomas reportados por el usuario
+    soluciones = []
+    for problema in base_de_datos_problemas:
+        if set(problema.sintomas).issubset(set(sintomas)):
+            soluciones.append(problema.solucion)
+    return soluciones
